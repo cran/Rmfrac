@@ -1,0 +1,22 @@
+Package: Rmfrac
+Type: Package
+Title: Simulation and Statistical Analysis of Multifractional Processes
+Version: 0.1.1
+Description: Simulation of several fractional and multifractional processes. Includes Brownian and fractional Brownian motions, bridges and Gaussian Haar-based multifractional processes (GHBMP). Implements the methods from Ayache, Olenko and Samarakoon (2025) <doi:10.48550/arXiv.2503.07286> for simulation of GHBMP. Estimation of Hurst functions and local fractal dimension. Clustering realisations based on the Hurst functions. Several functions to estimate and plot geometric statistics of the processes and time series. Provides a 'shiny' application for interactive use of the functions from the package.
+License: GPL-3
+Encoding: UTF-8
+Imports: parallel, parallelly, ggplot2(>= 3.5.0), zoo, matrixStats,
+        proxy, rlang, stats, foreach, doParallel, plotly, shiny,
+        graphics, shinycssloaders, fields, utils
+RoxygenNote: 7.3.1
+URL: https://github.com/Nemini-S/Rmfrac
+BugReports: https://github.com/Nemini-S/Rmfrac/issues
+Authors@R: c(person("Andriy", "Olenko", email = "a.olenko@latrobe.edu.au", role = "aut"),
+        person("Nemini", "Samarakoon", email = "neminisamarakoon95@gmail.com", role = c("aut", "cre")))
+Maintainer: Nemini Samarakoon <neminisamarakoon95@gmail.com>
+NeedsCompilation: no
+Packaged: 2025-09-04 23:07:36 UTC; 21381851
+Author: Andriy Olenko [aut],
+  Nemini Samarakoon [aut, cre]
+Repository: CRAN
+Date/Publication: 2025-09-10 07:30:07 UTC
