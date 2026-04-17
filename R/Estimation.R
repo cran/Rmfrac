@@ -13,8 +13,10 @@
 #' Since these are estimators of local characteristics, reliable results can only be obtained when a sufficiently large number of points is used.
 #' @details
 #' Statistical estimation of the Hurst function is done based on the results of Ayache, A.,
-#' & Bouly, F. (2023). The estimator is built through generalized quadratic variations
-#' of the process associated with its increments.
+#' & Bouly, F. (2023). The pointwise Holder exponent of the process for data considered in
+#' the package is equal to the Hurst function. The estimator is built through generalized
+#' quadratic variations of the process associated with its increments. The integer parameters
+#' Q and L define the generalized quadratic variations and the corresponding estimator.
 #'
 #'
 #' @export Hurst
@@ -32,9 +34,9 @@
 #' @examples
 #' \donttest{
 #' #Hurst function of a multifractional process simulated using GHBMP function
-#' T <- seq(0, 1, by = (1/2)^10)
+#' t <- seq(0, 1, by = (1/2)^10)
 #' H <- function(t) {return(0.5 - 0.4 * sin(6 * 3.14 * t))}
-#' X <- GHBMP(T, H)
+#' X <- GHBMP(t, H)
 #' Hurst(X)
 #' }
 #'
@@ -47,7 +49,7 @@ Hurst <- function(X, N = 100, Q = 2, L = 2)
   tmin1 <- min(na.omit(X[,1]))
   tmax1 <- max(na.omit(X[,1]))
 
-  X<-na.omit(X)
+  X <- na.omit(X)
 
   if (!is.data.frame(X) | !ncol(X) == 2 | !(all(sapply(X, is.numeric))) | !(all(X[[1]] >= 0)) ) {
     stop("X must be a numeric data frame with time sequence given as the first column")
@@ -160,9 +162,9 @@ Hurst <- function(X, N = 100, Q = 2, L = 2)
 #' @examples
 #' \donttest{
 #' #LFD of a multifractional process simulated using GHBMP function
-#' T <- seq(0, 1, by = (1/2)^10)
+#' t <- seq(0, 1, by = (1/2)^10)
 #' H <- function(t) {return(0.5 - 0.4 * sin(6 * 3.14 * t))}
-#' X <- GHBMP(T, H)
+#' X <- GHBMP(t, H)
 #' LFD(X)
 #' }
 #'
